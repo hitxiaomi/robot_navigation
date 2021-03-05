@@ -120,6 +120,7 @@ void DWBPublisher::publishTrajectories(const dwb_msgs::LocalPlanEvaluation& resu
     denominator = 1.0;
   }
 
+  ma.markers.reserve(results.twists.size());
   for (unsigned int i = 0; i < results.twists.size(); i++)
   {
     const dwb_msgs::TrajectoryScore& twist = results.twists[i];
